@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/26 15:56:07 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/26 18:01:58 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@
 # include <stddef.h>//size_t
 # include <limits.h>//int max min
 # include <fcntl.h>
+
+typedef struct s_positions
+{
+	int		height;
+	int		width;
+	int		i;
+	int		j;
+}			t_position;
 
 int		strcompare(const char *s1, const char *s2);
 void	ft_putstr_fd(char *str, int fd);
@@ -44,7 +52,7 @@ void	check_walls_left_right(char **two_d);
 int		map_count(char **two_d);
 void	check_long_of_map(char **two_d);
 char	**parse_maps(int ac, char **av);
-int	max_line(int fd);
+int		max_line(int fd);
 char	**copy_map(char **two_d);
-int	valid_path(char **two_d);
+int		checking_valid_path(char **two_d);
 #endif
