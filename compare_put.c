@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 00:46:47 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/26 14:41:27 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/27 19:31:20 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,22 @@ void	ft_putstr_fd(char *str, int fd)
 		write(fd, "Error\n", 6);
 		exit(EXIT_FAILURE);
 	}
+	else
+	{
+		while (*str)
+			write(1, str++, 1);
+	}
+}
+
+void	errors(char *str, int fd)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(fd, &str[i], 1);
+		i++;
+	}
+	exit(EXIT_FAILURE);
 }

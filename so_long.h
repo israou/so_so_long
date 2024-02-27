@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/26 18:01:58 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/27 22:25:53 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include <limits.h>//int max min
 # include <fcntl.h>
 
-typedef struct s_positions
+typedef struct t_position
 {
 	int		height;
 	int		width;
@@ -54,5 +54,13 @@ void	check_long_of_map(char **two_d);
 char	**parse_maps(int ac, char **av);
 int		max_line(int fd);
 char	**copy_map(char **two_d);
-int		checking_valid_path(char **two_d);
+int		valid_P_C_E(char **two_d);
+char	**copy_map(char **two_d);
+void	recursive_fill(char **new_map, int i, int j);
+void	fill(char **new_map, int i, int j);
+void	checking_valid_path(char **new_map);
+void	the_valid_path(char **two_d, t_position *r);
+void	errors(char *str, int fd);
+void	print_map(char **two_d);
+int		how_many(char **two_d);
 #endif

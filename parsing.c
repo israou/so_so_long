@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 00:49:27 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/26 15:55:21 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/27 19:26:15 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ char	**parse_maps(int ac, char **av)
 {
 	int		fd;
 	char	**two_d;
+	t_position	*r;
 
+
+	r = NULL;
 	if (ac != 2)
 		ft_putstr_fd("Error\n", 2);
 	check_extension(av[1]);
@@ -31,7 +34,9 @@ char	**parse_maps(int ac, char **av)
 	check_valid_char(two_d);
 	check_walls_top_down(two_d);
 	check_walls_left_right(two_d);
+	valid_P_C_E(two_d);
 	check_long_of_map(two_d);
-	valid_path(two_d);
+
+	the_valid_path(two_d, r);
 	return (two_d);
 }

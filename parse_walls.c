@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:19:09 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/26 15:33:20 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/27 19:44:48 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	check_walls_top_down(char **two_d)
 	while (two_d[i][j])
 	{
 		if (two_d[i][j] != '1')
-			ft_putstr_fd("Error\n", 2);
+			errors("Error\nTop has no walls\n", 2);
 		j++;
 	}
 	i = map_count(two_d) - 1;//hit l indice ki bda men 0
@@ -30,7 +30,7 @@ void	check_walls_top_down(char **two_d)
 	while (two_d[i][j])
 	{
 		if (two_d[i][j] != '1')
-			ft_putstr_fd("Error\n", 2);
+			errors("Error\nDown has no walls\n", 2);
 		j++;
 	}
 }
@@ -46,7 +46,7 @@ void	check_walls_left_right(char **two_d)
 	while (two_d[i] != NULL)//hit ayhbet htal lekher
 	{
 		if (two_d[i][j] != '1')
-			ft_putstr_fd("Error\n", 2);
+			errors("Error\nLeft has no walls\n", 2);
 		i++;
 	}
 	i = 0;
@@ -55,7 +55,7 @@ void	check_walls_left_right(char **two_d)
 	{
 		j = ft_strlen(two_d[i]);
 		if (two_d[i][j - 1] != '1')
-			ft_putstr_fd("Error\n", 2);
+			errors("Error\nRight has no walls\n", 2);
 		i++;
 	}
 }
@@ -82,9 +82,7 @@ void	check_long_of_map(char **two_d)
 	while (two_d[i] != NULL)
 	{
 		if (size != ft_strlen(two_d[i]))
-			ft_putstr_fd("Error\n", 2);
+			errors("Error\nInvalid map length\n", 2);
 		i++;
 	}
-	// if (i >= size)
-	// 	ft_putstr_fd("Error\n", 2);
 }
