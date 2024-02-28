@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/27 22:25:53 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/28 18:49:23 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 #  define BUFFER_SIZE 20
 # endif
 
+//liberation de touches du clavier dans une app graphique
+#   define ON_KEYUP 17
+#   define ON_KEYDOWN 2
+
+
 # include <unistd.h>//open, close, read, write
 # include <stdlib.h>//malloc, free, exit
 # include <stdio.h>//perror
@@ -24,14 +29,22 @@
 # include <stddef.h>//size_t
 # include <limits.h>//int max min
 # include <fcntl.h>
+# include <mlx.h>
 
 typedef struct t_position
 {
-	int		height;
-	int		width;
 	int		i;
 	int		j;
 }			t_position;
+
+typedef struct t_mlx
+{
+	int		height;
+	int		width;
+	void	*mlx_p;
+	void	*win_p;
+	void	*img_p;
+}			t_mlx;
 
 int		strcompare(const char *s1, const char *s2);
 void	ft_putstr_fd(char *str, int fd);
@@ -57,10 +70,10 @@ char	**copy_map(char **two_d);
 int		valid_P_C_E(char **two_d);
 char	**copy_map(char **two_d);
 void	recursive_fill(char **new_map, int i, int j);
-void	fill(char **new_map, int i, int j);
 void	checking_valid_path(char **new_map);
 void	the_valid_path(char **two_d, t_position *r);
 void	errors(char *str, int fd);
 void	print_map(char **two_d);
 int		how_many(char **two_d);
+void	*mlx_the_window(t_mlx *mlx);
 #endif

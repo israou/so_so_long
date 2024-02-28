@@ -17,6 +17,7 @@ SRC = utils_4_parsing.c \
 		compare_put.c \
 		parse_walls.c \
 		backtracking.c \
+		my_window.c \
 
 SRC_B =
 
@@ -27,13 +28,13 @@ OBJB = $(SRC_B:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 bonus: $(OBJB)
 		$(CC) $(OBJB) -o $(NAME_B)
 
 %.o : %.c so_long.h
-		$(CC) $(CFLAGS) -c $< -o $@
+		$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
 clean:
 	$(RM) $(OBJ) $(OBJB)

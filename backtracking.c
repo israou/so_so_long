@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 18:27:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/27 23:16:23 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/28 17:55:04 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,12 +153,12 @@ void	the_valid_path(char **two_d, t_position *r)
 	i = 0;
 	j = 0;
 	new_map = copy_map(two_d);
-	print_map(new_map);
+	// print_map(new_map);
 	find_player(new_map, &i, &j);
-	printf("before === fill\n");
+	// printf("before === fill\n");
 	recursive_fill(new_map, i, j);
-	printf("after === fill\n");
-	print_map(new_map);
+	// printf("after === fill\n");
+	// print_map(new_map);
 	checking_valid_path(new_map);
 
 }
