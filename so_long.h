@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/28 18:49:23 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/28 22:58:16 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,19 @@ typedef struct t_position
 	int		j;
 }			t_position;
 
-typedef struct t_mlx
+typedef struct s_mlx
 {
 	int		height;
 	int		width;
+	int		*h;
+	int		*w;
 	void	*mlx_p;
 	void	*win_p;
 	void	*img_p;
+	char	*addr;
+	int		bpp;//bits par pixel
+	int		length;
+	int		endian;//kola byte kifash mehtot
 }			t_mlx;
 
 int		strcompare(const char *s1, const char *s2);
@@ -75,5 +81,5 @@ void	the_valid_path(char **two_d, t_position *r);
 void	errors(char *str, int fd);
 void	print_map(char **two_d);
 int		how_many(char **two_d);
-void	*mlx_the_window(t_mlx *mlx);
+void	*my_mlx(t_mlx mlx);
 #endif
