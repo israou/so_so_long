@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/28 22:58:16 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/01 00:42:11 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,13 @@ typedef struct s_mlx
 	void	*mlx_p;
 	void	*win_p;
 	void	*img_p;
-	char	*addr;
-	int		bpp;//bits par pixel
+	char	**map;
+	int		i;
+	int		j;
+	// char	*addr;
+	// int		bpp;//bits par pixel
 	int		length;
-	int		endian;//kola byte kifash mehtot
+	// int		endian;//kola byte kifash mehtot
 }			t_mlx;
 
 int		strcompare(const char *s1, const char *s2);
@@ -81,5 +84,8 @@ void	the_valid_path(char **two_d, t_position *r);
 void	errors(char *str, int fd);
 void	print_map(char **two_d);
 int		how_many(char **two_d);
-void	*my_mlx(t_mlx mlx);
+void	the_mlx();
+void	put_image(t_mlx	*mlx_p, int i, int j, char *img);
+void	print_img(char **map, t_mlx mlx);
+void	initialize(t_mlx *map);
 #endif

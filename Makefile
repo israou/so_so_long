@@ -19,6 +19,7 @@ SRC = utils_4_parsing.c \
 		backtracking.c \
 		my_window.c \
 		mlx.c \
+		put_image_to_map.c \
 
 SRC_B =
 
