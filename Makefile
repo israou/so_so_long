@@ -20,6 +20,7 @@ SRC = utils_4_parsing.c \
 		my_window.c \
 		mlx.c \
 		put_image_to_map.c \
+		initialize.c \
 
 SRC_B =
 
