@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/02 01:08:16 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 02:49:01 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	check_walls_top_down(char **two_d);
 void	check_walls_left_right(char **two_d);
 int		map_count(char **two_d);
 void	check_long_of_map(char **two_d);
-char	**parse_maps(int ac, char **av);
+char	**parse_maps(int ac, char **av, t_mlx *mlx);
 int		max_line(int fd);
 char	**copy_map(char **two_d);
 int		valid_P_C_E(char **two_d);
@@ -85,12 +85,12 @@ void	the_valid_path(char **two_d, t_position *r);
 void	errors(char *str, int fd);
 void	print_map(char **two_d);
 int		how_many(char **two_d);
-void	the_mlx();
-void	put_image(t_mlx	*mlx_p, int i, int j, char *img);
+void	the_mlx(t_mlx *mlx_pointers);
+void	put_image(t_mlx *mlx, int i, int j, void *img);
 void	print_img(char **map, t_mlx mlx);
-void	initialize(t_mlx *map);
+void	initialize(t_mlx *mlx);
 void	init_mlx(t_mlx *mlx_pointers);
 void	create_window(t_mlx *mlx_pointers);
-void	load_and_display_image(t_mlx *mlx_pointers, char *filename, void *p);
-
+void	load_and_display_image(t_mlx *mlx_pointers, char *filename, void **p);
+void	print_img(char **map, t_mlx mlx);
 #endif

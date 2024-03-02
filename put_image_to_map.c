@@ -6,20 +6,12 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:06:28 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/02 01:15:28 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 02:21:50 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	put_image(t_mlx	*mlx_p, int i, int j, char *img)
-{
-	void	*w;
-	void	*themap;
-	w = mlx_p->win_p;
-	themap = mlx_p->mlx_p;
-	mlx_put_image_to_window(themap, w, img, i * 64, j * 64);
-}
 void	print_img(char **map, t_mlx mlx)
 {
 	int	i;
@@ -27,21 +19,20 @@ void	print_img(char **map, t_mlx mlx)
 
 	i = 0;
 	j = 0;
+	mlx_put_image_to_window(mlx.mlx_p, mlx.win_p, mlx.background, 0, 0);
 	while (map[i])
 	{
 		while (map[i][j])
 		{
 			j = 0;
 			if (map[i][j] == 'P')
-				put_image(&mlx, i, j, "p1.xpm");
+				put_image(&mlx, i, j, mlx.player);
 			else if (map[i][j] == 'C')
-				put_image(&mlx, i, j, "collectibles.xpm");
+				put_image(&mlx, i, j, mlx.collect);
 			else if (map[i][j] == '1')
-				put_image(&mlx, i, j, "walll.xpm");
+				put_image(&mlx, i, j, mlx.wall);
 			else if (map[i][j] == 'E')
-				put_image(&mlx, i, j, "exitt.xpm");
-			else if (map[i][j] == '0')
-				;
+				put_image(&mlx, i, j, mlx.exit);
 			j++;
 		}
 		i++;

@@ -6,26 +6,15 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 00:48:39 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/02 00:15:47 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 02:26:31 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	initialize(t_mlx *map)
+void	initialize(t_mlx *mlx)
 {
-	int	w;
-	int	h;
-
-
-	w = 64;
-	h = 64;
-	map->height = map_count(map->map) * 64;
-	map->width = ft_strlen(map->map[0]) * 64;
-	the_mlx();
+	mlx->height = map_count(mlx->map) * 64;
+	mlx->width = ft_strlen(mlx->map[0]) * 64;
+	the_mlx(*mlx);
 }
-	// w = 64;
-	// h = 64;
-	// the_mlx();
-	// map->height = map_count(map->map) * 64;
-	// map->width = ft_strlen(map->map[0]) * 64;

@@ -20,6 +20,7 @@ SRC =	utils_4_parsing.c \
 		my_window.c \
 		mlx.c \
 		initialize.c \
+		put_image_to_map.c \
 
 SRC_B =
 
@@ -30,7 +31,7 @@ OBJB = $(SRC_B:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -g -fsanitize=address -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 bonus: $(OBJB)
 		$(CC) $(OBJB) -o $(NAME_B)

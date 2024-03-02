@@ -6,18 +6,17 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 00:49:27 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/01 22:48:37 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 02:24:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**parse_maps(int ac, char **av)
+char	**parse_maps(int ac, char **av, t_mlx *mlx)
 {
 	int		fd;
 	char	**two_d;
 	t_position	*r;
-	t_mlx		mlx;
 
 	r = NULL;
 	if (ac != 2)
@@ -37,8 +36,7 @@ char	**parse_maps(int ac, char **av)
 	valid_P_C_E(two_d);
 	check_long_of_map(two_d);
 	the_valid_path(two_d, r);
-	mlx.map = two_d;
-	initialize(&mlx);
-
+	mlx->map = two_d;
+	initialize(mlx);
 	return (two_d);
 }
