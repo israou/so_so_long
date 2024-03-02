@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:21:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/02 03:01:29 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 23:13:45 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	init_mlx(t_mlx *mlx_pointers)
 
 void	create_window(t_mlx *mlx_pointers)
 {
-	mlx_pointers->win_p = mlx_new_window(mlx_pointers->mlx_p, 1000, 1000, "SO_LONG");
+	mlx_pointers->win_p = mlx_new_window(mlx_pointers->mlx_p, ft_strlen(mlx_pointers->map[0]) * 80,map_count(mlx_pointers->map) * 80, "SO_LONG");
 	if (!mlx_pointers->win_p)
 		errors("Error 4 window\n", 2);
 }
@@ -35,7 +35,7 @@ void	load_and_display_image(t_mlx *mlx_pointers, char *filename, void **p)
 
 void	put_image(t_mlx *mlx, int i, int j, void *img)
 {
-	mlx_put_image_to_window(mlx->mlx_p, mlx->win_p, img, j * 64, i * 64);
+	mlx_put_image_to_window(mlx->mlx_p, mlx->win_p, img, j * 80, i * 80);
 }
 
 void	the_mlx(t_mlx *mlx_pointers)
@@ -44,9 +44,9 @@ void	the_mlx(t_mlx *mlx_pointers)
 	mlx_pointers->h = 0;
 	init_mlx(mlx_pointers);
 	create_window(mlx_pointers);
-	load_and_display_image(mlx_pointers, "galaxy.xpm", &(mlx_pointers->background));
-	load_and_display_image(mlx_pointers, "collectibles.xpm", &(mlx_pointers->collect));
-	load_and_display_image(mlx_pointers, "walll.xpm", &(mlx_pointers->wall));
-	load_and_display_image(mlx_pointers, "p1.xpm", &(mlx_pointers->player));
-	load_and_display_image(mlx_pointers, "exitt.xpm", &(mlx_pointers->exit));
+	load_and_display_image(mlx_pointers, "sky.xpm", &(mlx_pointers->background));
+	load_and_display_image(mlx_pointers, "mybrain.xpm", &(mlx_pointers->collect));
+	load_and_display_image(mlx_pointers, "me.xpm", &(mlx_pointers->wall));
+	load_and_display_image(mlx_pointers, "alien.xpm", &(mlx_pointers->player));
+	load_and_display_image(mlx_pointers, "thexit.xpm", &(mlx_pointers->exit));
 }

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:06:28 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/02 03:15:23 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 20:57:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	print_img(char **map, t_mlx mlx)
 				put_image(&mlx, i, j, mlx.wall);
 			else if (map[i][j] == 'E')
 				put_image(&mlx, i, j, mlx.exit);
+			else if (map[i][j] == '0')
+				put_image(&mlx, i, j, mlx.background);
 			j++;
 		}
 		i++;
