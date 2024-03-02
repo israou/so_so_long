@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:21:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/02 02:52:10 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 03:01:29 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,11 @@ void	the_mlx(t_mlx *mlx_pointers)
 {
 	mlx_pointers->w = 0;
 	mlx_pointers->h = 0;
-	init_mlx(&mlx_pointers);
-	create_window(&mlx_pointers);
+	init_mlx(mlx_pointers);
+	create_window(mlx_pointers);
 	load_and_display_image(mlx_pointers, "galaxy.xpm", &(mlx_pointers->background));
 	load_and_display_image(mlx_pointers, "collectibles.xpm", &(mlx_pointers->collect));
 	load_and_display_image(mlx_pointers, "walll.xpm", &(mlx_pointers->wall));
 	load_and_display_image(mlx_pointers, "p1.xpm", &(mlx_pointers->player));
 	load_and_display_image(mlx_pointers, "exitt.xpm", &(mlx_pointers->exit));
-	mlx_loop(mlx_pointers->mlx_p);
 }
