@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/01 20:22:43 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 01:08:16 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,16 @@ typedef struct s_mlx
 {
 	int		height;
 	int		width;
-	int 	*w;
-	int		*h;
+	int 	w;
+	int		h;
 	void	*mlx_p;
 	void	*win_p;
 	void	*img_p;
+	void	*player;
+	void	*collect;
+	void	*wall;
+	void	*background;
+	void	*exit;
 	char	**map;
 	int		i;
 	int		j;
@@ -86,6 +91,6 @@ void	print_img(char **map, t_mlx mlx);
 void	initialize(t_mlx *map);
 void	init_mlx(t_mlx *mlx_pointers);
 void	create_window(t_mlx *mlx_pointers);
-void	load_and_display_image(t_mlx *mlx_pointers, char *filename);
+void	load_and_display_image(t_mlx *mlx_pointers, char *filename, void *p);
 
 #endif

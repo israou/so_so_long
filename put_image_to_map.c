@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:06:28 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/01 00:41:04 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 01:15:28 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	put_image(t_mlx	*mlx_p, int i, int j, char *img)
 	void	*w;
 	void	*themap;
 	w = mlx_p->win_p;
-	themap = mlx_p->map;
-	mlx_put_image_to_window(themap, w, img, i, j);
+	themap = mlx_p->mlx_p;
+	mlx_put_image_to_window(themap, w, img, i * 64, j * 64);
 }
 void	print_img(char **map, t_mlx mlx)
 {

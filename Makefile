@@ -8,7 +8,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRC = utils_4_parsing.c \
+SRC =	utils_4_parsing.c \
 		parsing.c \
 		read_maps.c \
 		so_long.c \
@@ -19,7 +19,6 @@ SRC = utils_4_parsing.c \
 		backtracking.c \
 		my_window.c \
 		mlx.c \
-		put_image_to_map.c \
 		initialize.c \
 
 SRC_B =
@@ -31,7 +30,7 @@ OBJB = $(SRC_B:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(OBJ) -g -fsanitize=address -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 bonus: $(OBJB)
 		$(CC) $(OBJB) -o $(NAME_B)
