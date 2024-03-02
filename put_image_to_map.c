@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:06:28 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/02 02:21:50 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/02 03:15:23 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	print_img(char **map, t_mlx mlx)
 	mlx_put_image_to_window(mlx.mlx_p, mlx.win_p, mlx.background, 0, 0);
 	while (map[i])
 	{
+		j = 0;
 		while (map[i][j])
 		{
-			j = 0;
 			if (map[i][j] == 'P')
 				put_image(&mlx, i, j, mlx.player);
 			else if (map[i][j] == 'C')
