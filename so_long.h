@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/02 02:49:01 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/03 03:10:17 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 #   define ON_KEYUP 17
 #   define ON_KEYDOWN 2
 
+# define A 5
+# define S 1
+# define D 2
+# define W 3
 
 # include <unistd.h>//open, close, read, write
 # include <stdlib.h>//malloc, free, exit
@@ -56,6 +60,7 @@ typedef struct s_mlx
 	int		j;
 }			t_mlx;
 
+//---------------------parsing-----------------
 int		strcompare(const char *s1, const char *s2);
 void	ft_putstr_fd(char *str, int fd);
 int		check_maps(char **two_d);
@@ -76,6 +81,9 @@ int		map_count(char **two_d);
 void	check_long_of_map(char **two_d);
 char	**parse_maps(int ac, char **av, t_mlx *mlx);
 int		max_line(int fd);
+
+//------------------backtracking
+
 char	**copy_map(char **two_d);
 int		valid_P_C_E(char **two_d);
 char	**copy_map(char **two_d);
@@ -85,6 +93,7 @@ void	the_valid_path(char **two_d, t_position *r);
 void	errors(char *str, int fd);
 void	print_map(char **two_d);
 int		how_many(char **two_d);
+//---------------mlx
 void	the_mlx(t_mlx *mlx_pointers);
 void	put_image(t_mlx *mlx, int i, int j, void *img);
 void	print_img(char **map, t_mlx mlx);
@@ -93,4 +102,18 @@ void	init_mlx(t_mlx *mlx_pointers);
 void	create_window(t_mlx *mlx_pointers);
 void	load_and_display_image(t_mlx *mlx_pointers, char *filename, void **p);
 void	print_img(char **map, t_mlx mlx);
+//-----------------bouger
+void	to_up(t_mlx *mlx);
+void	to_down(t_mlx *mlx);
+void	to_right(t_mlx *mlx);
+void	to_left(t_mlx *mlx);
+void	move_u_d_l_r(t_mlx *mlx, int keycode);
+void	count_moves(t_mlx *mlx);
+int		how_many(char **two_d);
+void	close_map(t_mlx *mlx);
+void	game_over();
+void	destory_img(t_mlx *mlx);
+void	hook(t_mlx *mlx, int keycode);
+
+
 #endif

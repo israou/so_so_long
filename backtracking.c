@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 18:27:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/28 17:55:04 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/03 03:10:37 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,28 +120,6 @@ void find_player(char **two_d, int *i, int *j)
 	}
 }
 
-int how_many(char **two_d)
-{
-	int	i;
-	int	j;
-	int	c_found;
-
-	i = 0;
-	j = 0;
-	c_found = 0;
-	while (two_d[i])
-	{
-		j = 0;
-		while (two_d[i][j])
-		{
-			if (two_d[i][j] == 'C')
-				c_found++;
-			j++;
-		}
-		i++;
-	}
-	return (c_found);
-}
 void	the_valid_path(char **two_d, t_position *r)
 {
 
