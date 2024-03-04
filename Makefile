@@ -21,6 +21,7 @@ SRC =	utils_4_parsing.c \
 		mlx.c \
 		initialize.c \
 		put_image_to_map.c \
+		directionss.c \
 
 SRC_B =
 

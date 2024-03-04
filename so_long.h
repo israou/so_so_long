@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/03 03:10:17 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/04 22:25:04 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_mlx
 	char	**map;
 	int		i;
 	int		j;
+			moves;
 }			t_mlx;
 
 //---------------------parsing-----------------
@@ -113,7 +114,7 @@ int		how_many(char **two_d);
 void	close_map(t_mlx *mlx);
 void	game_over();
 void	destory_img(t_mlx *mlx);
-void	hook(t_mlx *mlx, int keycode);
+int		hook(t_mlx *mlx, int keycode);
 
 
 #endif
