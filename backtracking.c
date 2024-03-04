@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 18:27:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 00:11:26 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 00:12:24 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,6 @@ void print_map(char **two_d)
 		i++;
 	}
 }
-
-
 
 void	the_valid_path(char **two_d, t_position *r)
 {

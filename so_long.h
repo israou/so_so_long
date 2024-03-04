@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 00:04:21 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 00:36:05 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 # endif
 
 //liberation de touches du clavier dans une app graphique
-#   define ON_KEYUP 17
-#   define ON_KEYDOWN 2
+#   define ON_KEYPRESS 2
+#   define ON_KEYDOWN
 
-# define A 5
+# define A 0
 # define S 1
 # define D 2
-# define W 3
+# define W 13
 
 # include <unistd.h>//open, close, read, write
 # include <stdlib.h>//malloc, free, exit
@@ -112,8 +112,8 @@ int		how_many(char **two_d);
 void	close_map(t_mlx *mlx);
 void	game_over(t_mlx *mlx);
 void	destory_img(t_mlx *mlx);
-int		hook(t_mlx *mlx, int keycode);
+int		move(int keycode, t_mlx *mlx);
 char	*ft_itoa(int n);
-void find_player(char **two_d, int *i, int *j);
+void	find_player(char **two_d, int *i, int *j);
 
 #endif
