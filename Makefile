@@ -18,7 +18,6 @@ SRC =	utils_4_parsing.c \
 		parse_walls.c \
 		backtracking.c \
 		my_window.c \
-		mlx.c \
 		initialize.c \
 		put_image_to_map.c \
 		directionss.c \

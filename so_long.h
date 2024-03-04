@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/04 23:24:20 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 00:04:21 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ typedef struct s_mlx
 	char	**map;
 	int		i;
 	int		j;
-			moves;
 }			t_mlx;
 
 //---------------------parsing-----------------
@@ -114,6 +113,7 @@ void	close_map(t_mlx *mlx);
 void	game_over(t_mlx *mlx);
 void	destory_img(t_mlx *mlx);
 int		hook(t_mlx *mlx, int keycode);
-
+char	*ft_itoa(int n);
+void find_player(char **two_d, int *i, int *j);
 
 #endif

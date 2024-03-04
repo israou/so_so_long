@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 23:11:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/04 23:13:18 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 00:08:30 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	close_map(t_mlx *mlx)
 
 void	game_over(t_mlx *mlx)
 {
-	mlx->map = mlx;
 	errors("GAME OVER !\n", 2);
 	close_map(mlx);
 }
