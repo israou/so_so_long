@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 00:54:56 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 01:36:06 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,11 @@ int		valid_P_C_E(char **two_d);
 char	**copy_map(char **two_d);
 void	recursive_fill(char **new_map, int i, int j);
 void	checking_valid_path(char **new_map);
-void	the_valid_path(char **two_d, t_position *r);
+void	the_valid_path(char **two_d);
 void	errors(char *str, int fd);
 void	print_map(char **two_d);
 int		how_many(char **two_d);
+char	**ft_free(char **two_d);
 //---------------mlx
 void	the_mlx(t_mlx *mlx_pointers);
 void	put_image(t_mlx *mlx, int i, int j, void *img);

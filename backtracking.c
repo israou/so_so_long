@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 18:27:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 00:12:24 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 01:35:56 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,8 @@ void print_map(char **two_d)
 	}
 }
 
-void	the_valid_path(char **two_d, t_position *r)
+void	the_valid_path(char **two_d)
 {
-
-	(void)r;
 	char	**new_map;
 	int i;
 	int j;
@@ -122,5 +120,20 @@ void	the_valid_path(char **two_d, t_position *r)
 	// printf("after === fill\n");
 	// print_map(new_map);
 	checking_valid_path(new_map);
+	ft_free(new_map);
 
+}
+
+char	**ft_free(char **two_d)
+{
+	int	i;
+
+	i = 0;
+	while (two_d[i])
+	{
+		free(two_d[i]);
+		i++;
+	}
+	free(two_d);
+	return (NULL);
 }
