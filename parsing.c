@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 00:49:27 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 01:36:25 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 01:42:42 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ char	**parse_maps(int ac, char **av, t_mlx *mlx)
 {
 	int		fd;
 	char	**two_d;
-	t_position	*r;
 
-	r = NULL;
 	if (ac != 2)
 		ft_putstr_fd("Error\n", 2);
 	check_extension(av[1]);

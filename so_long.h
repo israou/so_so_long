@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 01:36:06 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 04:46:21 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@
 # include <fcntl.h>
 # include <mlx.h>
 
+static int	moves = 0;
+
 typedef struct t_position
 {
 	int		i;
@@ -58,7 +60,6 @@ typedef struct s_mlx
 	char	**map;
 	int		i;
 	int		j;
-	int		move;
 }			t_mlx;
 
 //---------------------parsing-----------------
@@ -117,5 +118,5 @@ void	destory_img(t_mlx *mlx);
 int		move(int keycode, t_mlx *mlx);
 char	*ft_itoa(int n);
 void	find_player(char **two_d, int *i, int *j);
-
+void	ft_putnbr_fd(int nb, int fd);
 #endif
