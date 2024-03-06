@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/06 01:39:52 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 02:15:56 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@
 # include <limits.h>//int max min
 # include <fcntl.h>
 # include <mlx.h>
-
-static int	g_moves = 0;
 
 typedef struct t_position
 {
