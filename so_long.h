@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:04:43 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/06 02:15:56 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 17:48:07 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,6 @@ void	to_left(t_mlx *mlx);
 void	move_u_d_l_r(t_mlx *mlx, int keycode);
 int		how_many(char **two_d);
 void	close_map(t_mlx *mlx);
-void	destory_img(t_mlx *mlx);
 int		move(int keycode, t_mlx *mlx);
 void	find_player(char **two_d, int *i, int *j);
 void	ft_putnbr_fd(int nb, int fd);

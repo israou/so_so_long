@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 23:11:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 21:29:11 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 17:47:56 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,4 @@ void	close_map(t_mlx *mlx)
 	ft_putstr_fd(" \t\t\t OUTTT !\n", 2);
 	mlx_destroy_window(mlx->mlx_p, mlx->win_p);
 	exit(0);
-}
-
-void	destory_img(t_mlx *mlx)
-{
-	mlx_destroy_image(mlx->mlx_p, mlx->wall);
-	mlx_destroy_image(mlx->mlx_p, mlx->background);
-	mlx_destroy_image(mlx->mlx_p, mlx->player);
-	mlx_destroy_image(mlx->mlx_p, mlx->collect);
-	mlx_destroy_image(mlx->mlx_p, mlx->exit);
 }
