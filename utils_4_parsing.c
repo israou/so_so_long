@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:03:40 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/27 19:39:01 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 00:56:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	check_extension(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	i--;
 	if (str[i] == 'r' && str[--i] == 'e' && str[--i] == 'b' && str[--i] == '.')
@@ -38,61 +38,68 @@ int	check_empty(char **two_d)
 		{
 			if ((two_d[i][j] >= 9 && two_d[i][j] <= 13) || (two_d[i][j] == ' '))
 				errors("Error\nSpaces error\n", 2);
-			j++;//caractere suivant
+			j++;
 		}
-		i++;//ligne suivante
-		if (j == 0)//si la ligne est vide
+		i++;
+		if (j == 0)
 			errors("Error\nEmpty line error\n", 2);
 	}
 	return (0);
 }
 
-int	check_maps(char **two_d)
+void	check_maps2(int efound, int cfound, int pfound)
+{
+	if (efound != 1 || cfound == 0 || pfound != 1)
+		errors("Error\nInvalid number of P||C||E\n", 2);
+}
+
+void	check_maps(char **two_d)
 {
 	int	i;
 	int	j;
-	int	E_found = 0;
-	int	C_found = 0;
-	int	P_found = 0;
+	int	efound;
+	int	cfound;
+	int	pfound;
 
-	i = 0;
-	while (two_d[i])
+	efound = 0;
+	cfound = 0;
+	pfound = 0;
+	i = -1;
+	while (two_d[++i])
 	{
 		j = 0;
 		while (two_d[i][j])
 		{
 			if (two_d[i][j] == 'E')
-				E_found++;
+				efound++;
 			else if (two_d[i][j] == 'P')
-				P_found++;
+				pfound++;
 			else if (two_d[i][j] == 'C')
-				C_found++;
+				cfound++;
 			j++;
 		}
-		i++;
 	}
-	if (E_found != 1 || C_found == 0 || P_found != 1)
-		errors("Error\nInvalid numbers of P||C||E\n", 2);
-	return (0);
+	check_maps2(efound, cfound, pfound);
 }
 
 void	check_valid_char(char **two_d)
 {
 	int		i;
 	int		j;
-	char	this_char;
+	char	thischar;
 
 	i = 0;
-	while (two_d[i] != NULL)//htal la fin dial tableau
+	while (two_d[i] != NULL)
 	{
 		j = 0;
-		while (two_d[i][j] != '\0')//parcourir les aracteres de chaque ligne
+		while (two_d[i][j] != '\0')
 		{
-			this_char = two_d[i][j];
-			if (!(this_char == '0' || this_char == '1' || this_char == 'E' || this_char == 'C' || this_char == 'P'))
+			thischar = two_d[i][j];
+			if (!(thischar == '0' || thischar == '1' || thischar == 'E' || \
+			thischar == 'C' || thischar == 'P'))
 				errors("Error\nInvalid character\n", 2);
-			j++;//lcaractere suivant dans la meme ligne
+			j++;
 		}
-		i++;//ligne suivante
+		i++;
 	}
 }

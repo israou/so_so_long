@@ -6,13 +6,13 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 23:11:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 00:08:30 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 21:29:11 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void find_player(char **two_d, int *i, int *j)
+void	find_player(char **two_d, int *i, int *j)
 {
 	while (two_d[*i])
 	{
@@ -27,7 +27,7 @@ void find_player(char **two_d, int *i, int *j)
 	}
 }
 
-int how_many(char **two_d)
+int	how_many(char **two_d)
 {
 	int	i;
 	int	j;
@@ -55,12 +55,6 @@ void	close_map(t_mlx *mlx)
 	ft_putstr_fd(" \t\t\t OUTTT !\n", 2);
 	mlx_destroy_window(mlx->mlx_p, mlx->win_p);
 	exit(0);
-}
-
-void	game_over(t_mlx *mlx)
-{
-	errors("GAME OVER !\n", 2);
-	close_map(mlx);
 }
 
 void	destory_img(t_mlx *mlx)

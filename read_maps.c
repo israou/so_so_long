@@ -6,13 +6,13 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:49:50 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/24 01:58:22 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 01:03:14 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char **read_maps(int fd, char *av)
+char	**read_maps(int fd, char *av)
 {
 	int		i;
 	char	**lines;
@@ -21,41 +21,62 @@ char **read_maps(int fd, char *av)
 	i = max_line(fd);
 	close(fd);
 	fd = open(av, O_RDONLY);
-	lines = (char **)malloc(sizeof(char *) * i);//le nbre max de ligne a representer dans le tableau a 2d
+	lines = (char **)malloc(sizeof(char *) * i);
 	if (!lines)
-		return(NULL);
+		return (NULL);
 	i = 0;
 	while (1)
 	{
 		line = get_next_line(fd);
 		if (!line)
-			break;//si la lecture echoue,,ou j atteigne la fin du fichier
-		lines[i] = ft_strdup(line);//nstocker la ligne li tqrat ftableau 2d
-		free(line);//nfreyer l getnextline
+			break ;
+		lines[i] = ft_strdup(line);
+		free(line);
 		if (!lines[i])
-			break;
-		i++;// bash idouz fl array dialna next block
+			break ;
+		i++;
 	}
 	lines[i] = NULL;
 	return (lines);
 }
-//ma fonction appelle get_next_line pour lire dans fd, elle stocke chaque ligne dans le tableau
-//en utilisant strdup pour creer une copie de la ligne lue
-//flekher elle retourne lines
-//backtracking algorithm for checking a valid path
+
 int	max_line(int fd)
 {
-	int i;
-	char *line;
+	int		i;
+	char	*line;
 
 	i = 0;
 	while (1)
 	{
 		line = get_next_line(fd);
 		if (!line)
-			break;
+			break ;
 		free(line);
 		i++;
 	}
 	return (i);
+}
+
+int	valid_p_c_e(char **two_d)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (two_d[i])
+	{
+		j = 0;
+		while (two_d[i][j])
+		{
+			if (two_d[i][j] == 'P' || two_d[i][j] == 'C' || two_d[i][j] == 'E')
+			{
+				if (two_d[i - 1][j] == '1' && two_d[i + 1][j] == '1'
+				&& two_d[i][j - 1] == '1' && two_d[i][j + 1] == '1')
+					errors("Error\nwalls autour de P || C || E\n", 2);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

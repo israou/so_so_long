@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:21:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/04 23:02:34 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 20:31:02 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,17 @@ void	init_mlx(t_mlx *mlx_pointers)
 
 void	create_window(t_mlx *mlx_pointers)
 {
-	mlx_pointers->win_p = mlx_new_window(mlx_pointers->mlx_p, ft_strlen(mlx_pointers->map[0]) * 80,map_count(mlx_pointers->map) * 80, "SO_LONG");
+	mlx_pointers->win_p = mlx_new_window(mlx_pointers->mlx_p, \
+	ft_strlen(mlx_pointers->map[0]) * 80, map_count(mlx_pointers->map) * 80, \
+	"SO_LONG");
 	if (!mlx_pointers->win_p)
 		errors("Error 4 window\n", 2);
 }
 
 void	load_and_display_image(t_mlx *mlx_pointers, char *filename, void **p)
 {
-	*p = mlx_xpm_file_to_image(mlx_pointers->mlx_p, filename, &(mlx_pointers->w), &(mlx_pointers->h));
+	*p = mlx_xpm_file_to_image(mlx_pointers->mlx_p, filename, \
+	&(mlx_pointers->w), &(mlx_pointers->h));
 	if (!*p)
 		errors("Error loading XPM image\n", 2);
 }
@@ -44,8 +47,10 @@ void	the_mlx(t_mlx *mlx_pointers)
 	mlx_pointers->h = 0;
 	init_mlx(mlx_pointers);
 	create_window(mlx_pointers);
-	load_and_display_image(mlx_pointers, "sky.xpm", &(mlx_pointers->background));
-	load_and_display_image(mlx_pointers, "mybrain.xpm", &(mlx_pointers->collect));
+	load_and_display_image(mlx_pointers, "sky.xpm", \
+	&(mlx_pointers->background));
+	load_and_display_image(mlx_pointers, "mybrain.xpm", \
+	&(mlx_pointers->collect));
 	load_and_display_image(mlx_pointers, "me.xpm", &(mlx_pointers->wall));
 	load_and_display_image(mlx_pointers, "alien.xpm", &(mlx_pointers->player));
 	load_and_display_image(mlx_pointers, "thexit.xpm", &(mlx_pointers->exit));

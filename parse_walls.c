@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:19:09 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/27 19:44:48 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 20:31:39 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_walls_top_down(char **two_d)
 			errors("Error\nTop has no walls\n", 2);
 		j++;
 	}
-	i = map_count(two_d) - 1;//hit l indice ki bda men 0
+	i = map_count(two_d) - 1;
 	j = 0;
 	while (two_d[i][j])
 	{
@@ -42,8 +42,7 @@ void	check_walls_left_right(char **two_d)
 
 	i = 0;
 	j = 0;
-	//str finit par \0,, 2D array par null
-	while (two_d[i] != NULL)//hit ayhbet htal lekher
+	while (two_d[i] != NULL)
 	{
 		if (two_d[i][j] != '1')
 			errors("Error\nLeft has no walls\n", 2);

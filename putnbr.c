@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 04:45:23 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 04:45:31 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 20:33:00 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void	ft_putnbr_fd(int nb, int fd)
 {
+	char	c;
 
 	if (nb > 9)
 	{
 		ft_putnbr_fd(nb / 10, fd);
 	}
-	char c = nb % 10 + '0';
+	c = nb % 10 + '0';
 	write(1, &c, 1);
 }

@@ -22,7 +22,7 @@ SRC =	utils_4_parsing.c \
 		put_image_to_map.c \
 		directionss.c \
 		utils_2_move.c \
-		itoa.c \
+		putnbr.c \
 
 SRC_B =
 

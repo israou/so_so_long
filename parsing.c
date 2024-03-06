@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 00:49:27 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 01:42:42 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/05 23:53:51 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	**parse_maps(int ac, char **av, t_mlx *mlx)
 	check_valid_char(two_d);
 	check_walls_top_down(two_d);
 	check_walls_left_right(two_d);
-	valid_P_C_E(two_d);
+	valid_p_c_e(two_d);
 	check_long_of_map(two_d);
 	the_valid_path(two_d);
 	mlx->map = two_d;

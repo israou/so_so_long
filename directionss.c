@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 00:42:28 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 04:45:13 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 01:42:58 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,20 @@ void	to_up(t_mlx *mlx)
 	find_player(mlx->map, &(mlx->i), &(mlx->j));
 	if (mlx->map[mlx->i - 1][mlx->j] == '0')
 	{
-		moves++;
+		mlx->moves++;
+		// g_moves++;
 		mlx->map[mlx->i - 1][mlx->j] = 'P';
 		mlx->map[mlx->i][mlx->j] = '0';
-		ft_putnbr_fd(moves, 1);
+		ft_putnbr_fd(mlx->moves, 1);
 		ft_putstr_fd("\n", 1);
 	}
 	else if (mlx->map[mlx->i - 1][mlx-> j] == 'C')
 	{
-		moves++;
+		// g_moves++;
+		mlx->moves++;
 		mlx->map[mlx->i - 1][mlx->j] = 'P';
 		mlx->map[mlx->i][mlx->j] = '0';
-		ft_putnbr_fd(moves, 1);
+		ft_putnbr_fd(mlx->moves, 1);
 		ft_putstr_fd("\n", 1);
 	}
 	else if (mlx->map[mlx->i -1][mlx-> j] == 'E')
@@ -41,7 +43,6 @@ void	to_up(t_mlx *mlx)
 	}
 }
 
-
 void	to_down(t_mlx *mlx)
 {
 	find_player(mlx->map, &(mlx->i), &(mlx->j));
@@ -49,16 +50,17 @@ void	to_down(t_mlx *mlx)
 	{
 		mlx->map[mlx->i + 1][mlx->j] = 'P';
 		mlx->map[mlx->i][mlx->j] = '0';
-		moves++;
-		ft_putnbr_fd(moves, 1);
+		mlx->moves++;
+		// g_moves++;
+		ft_putnbr_fd(g_moves, 1);
 		ft_putstr_fd("\n", 1);
 	}
 	else if (mlx->map[mlx-> i + 1][mlx-> j] == 'C')
 	{
 		mlx->map[mlx->i + 1][mlx->j] = 'P';
 		mlx->map[mlx->i][mlx->j] = '0';
-		moves++;
-		ft_putnbr_fd(moves, 1);
+		// g_moves++;
+		ft_putnbr_fd(mlx->moves, 1);
 		ft_putstr_fd("\n", 1);
 	}
 	else if (mlx->map[mlx-> i + 1][mlx-> j] == 'E')
@@ -78,16 +80,18 @@ void	to_right(t_mlx *mlx)
 	{
 		mlx->map[mlx->i][mlx->j + 1] = 'P';
 		mlx->map[mlx->i][mlx->j] = '0';
-		moves++;
-		ft_putnbr_fd(moves, 1);
+		// g_moves++;
+		mlx->moves++;
+		ft_putnbr_fd(mlx->moves, 1);
 		ft_putstr_fd("\n", 1);
 	}
 	else if (mlx->map[mlx->i][mlx-> j + 1] == 'C')
 	{
 		mlx->map[mlx->i][mlx->j + 1] = 'P';
 		mlx->map[mlx->i][mlx->j] = '0';
-		moves++;
-		ft_putnbr_fd(moves, 1);
+		// g_moves++;
+		mlx->moves++;
+		ft_putnbr_fd(mlx->moves, 1);
 		ft_putstr_fd("\n", 1);
 	}
 	else if (mlx->map[mlx->i][mlx-> j + 1] == 'E')
@@ -107,16 +111,18 @@ void	to_left(t_mlx *mlx)
 	{
 		mlx->map[mlx->i][mlx->j - 1] = 'P';
 		mlx->map[mlx->i][mlx->j] = '0';
-		moves++;
-		ft_putnbr_fd(moves, 1);
+		// g_moves++;
+		mlx->moves++;
+		ft_putnbr_fd(mlx->moves, 1);
 		ft_putstr_fd("\n", 1);
 	}
 	else if (mlx->map[mlx->i][mlx-> j - 1] == 'C')
 	{
 		mlx->map[mlx->i][mlx->j - 1] = 'P';
 		mlx->map[mlx->i][mlx->j] = '0';
-		moves++;
-		ft_putnbr_fd(moves, 1);
+		// g_moves++;
+		mlx->moves++;
+		ft_putnbr_fd(mlx->moves, 1);
 		ft_putstr_fd("\n", 1);
 	}
 	else if (mlx->map[mlx->i][mlx-> j - 1] == 'E')
@@ -140,4 +146,3 @@ void	move_u_d_l_r(t_mlx *mlx, int keycode)
 	else if (keycode == D)
 		to_right(mlx);
 }
-
