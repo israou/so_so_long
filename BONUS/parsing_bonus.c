@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 00:49:27 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/07 22:54:21 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/03/07 23:34:30 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/03/07 23:54:28 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 char	**parse_maps(int ac, char **av, t_mlx *mlx)
 {
@@ -28,10 +28,11 @@ char	**parse_maps(int ac, char **av, t_mlx *mlx)
 		ft_putstr_fd("Error\n", 2);
 	check_empty(two_d);
 	check_maps(two_d);
+	check_enemy(two_d);
 	check_valid_char(two_d);
 	check_walls_top_down(two_d);
 	check_walls_left_right(two_d);
-	valid_p_c_e(two_d);
+	valid_p_c_e_d(two_d);
 	check_long_of_map(two_d);
 	the_valid_path(two_d);
 	mlx->map = two_d;

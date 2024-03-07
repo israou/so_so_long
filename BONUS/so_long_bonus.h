@@ -6,12 +6,12 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 20:39:46 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/07 20:39:56 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/07 23:54:07 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 20
@@ -45,6 +45,7 @@ typedef struct s_mlx
 	void	*collect;
 	void	*wall;
 	void	*background;
+	void	*enemy;
 	void	*exit;
 	char	**map;
 	int		i;
@@ -74,11 +75,12 @@ void	check_long_of_map(char **two_d);
 char	**parse_maps(int ac, char **av, t_mlx *mlx);
 int		max_line(int fd);
 void	check_maps2(int efound, int cfound, int pfound);
-
+void	check_enemy2(int dfound);
+void	check_enemy(char **two_d);
 //------------------backtracking
 
 char	**copy_map(char **two_d);
-int		valid_p_c_e(char **two_d);
+int		valid_p_c_e_d(char **two_d);
 char	**copy_map(char **two_d);
 void	recursive_fill(char **new_map, int i, int j);
 void	checking_valid_path(char **new_map);

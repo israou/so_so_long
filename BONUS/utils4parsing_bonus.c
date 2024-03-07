@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_4_parsing.c                                  :+:      :+:    :+:   */
+/*   utils4parsing_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 15:03:40 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/07 23:31:12 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/03/07 23:24:23 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/03/07 23:41:47 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	check_extension(char *str)
 {
@@ -81,7 +81,34 @@ void	check_maps(char **two_d)
 	}
 	check_maps2(efound, cfound, pfound);
 }
+void	check_enemy2(int dfound)
+{
+	if (dfound != 1)
+		errors("Error\nInvalid number of enemy", 2);
+}
 
+void	check_enemy(char **two_d)
+{
+	int	i;
+	int	j;
+	int	dfound;
+
+	i = 0;
+	j = 0;
+	dfound = 0;
+	while (two_d[i])
+	{
+		j = 0;
+		while (two_d[i][j])
+		{
+			if (two_d[i][j] == 'D')
+				dfound++;
+			j++;
+		}
+		i++;
+	}
+	check_enemy2(dfound);
+}
 void	check_valid_char(char **two_d)
 {
 	int		i;
@@ -96,7 +123,7 @@ void	check_valid_char(char **two_d)
 		{
 			thischar = two_d[i][j];
 			if (!(thischar == '0' || thischar == '1' || thischar == 'E' || \
-			thischar == 'C' || thischar == 'P'))
+			thischar == 'C' || thischar == 'P' || thischar == 'D'))
 				errors("Error\nInvalid character\n", 2);
 			j++;
 		}

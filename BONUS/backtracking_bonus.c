@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   backtracking.c                                     :+:      :+:    :+:   */
+/*   backtracking_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 18:27:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/07 23:50:52 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/03/07 23:35:26 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/03/07 23:51:29 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 char	**copy_map(char **two_d)
 {
 	int		i;
 	char	**copie_map;
-	int		nlines;
+	int nlines;
 
 	nlines = map_count(two_d);
 	copie_map = (char **) malloc (sizeof(char *) * (nlines + 1));

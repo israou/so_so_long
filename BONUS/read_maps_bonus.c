@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_maps.c                                        :+:      :+:    :+:   */
+/*   read_maps_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 15:49:50 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/07 23:12:33 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/03/07 23:20:26 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/03/07 23:21:26 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 char	**read_maps(int fd, char *av)
 {
@@ -57,7 +57,7 @@ int	max_line(int fd)
 	return (i);
 }
 
-int	valid_p_c_e(char **two_d)
+int	valid_p_c_e_d(char **two_d)
 {
 	int	i;
 	int	j;
@@ -68,11 +68,11 @@ int	valid_p_c_e(char **two_d)
 		j = 0;
 		while (two_d[i][j])
 		{
-			if (two_d[i][j] == 'P' || two_d[i][j] == 'C' || two_d[i][j] == 'E')
+			if (two_d[i][j] == 'P' || two_d[i][j] == 'C' || two_d[i][j] == 'E' || two_d[i][j] == 'D')
 			{
 				if (two_d[i - 1][j] == '1' && two_d[i + 1][j] == '1'
 				&& two_d[i][j - 1] == '1' && two_d[i][j + 1] == '1')
-					errors("Error\nwalls autour de P || C || E\n", 2);
+					errors("Error\nwalls autour de P || C || E|| D\n", 2);
 			}
 			j++;
 		}
