@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 00:42:28 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/06 02:18:57 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 19:41:18 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	to_up(t_mlx *mlx)
 		if (how_many(mlx->map) == 0)
 		{
 			ft_putstr_fd("WINNER !!", 1);
-			close_map(mlx);
+			close_map();
 		}
 	}
 }
@@ -61,7 +61,7 @@ void	to_down(t_mlx *mlx)
 		if (how_many(mlx->map) == 0)
 		{
 			ft_putstr_fd("WINNER !!", 1);
-			close_map(mlx);
+			close_map();
 		}
 	}
 }
@@ -88,7 +88,7 @@ void	to_right(t_mlx *mlx)
 		if (how_many(mlx->map) == 0)
 		{
 			ft_putstr_fd("WINNER !!", 1);
-			close_map(mlx);
+			close_map();
 		}
 	}
 }
@@ -115,7 +115,7 @@ void	to_left(t_mlx *mlx)
 		if (how_many(mlx->map) == 0)
 		{
 			ft_putstr_fd("WINNER !!", 1);
-			close_map(mlx);
+			close_map();
 		}
 	}
 }

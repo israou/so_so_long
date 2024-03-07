@@ -6,16 +6,20 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 20:49:55 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/06 02:20:10 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/07 20:01:07 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+void ss()
+{
+	system("leaks so_long");
+}
 int	move(int keycode, t_mlx *mlx)
 {
+	// atexit(ss);
 	if (keycode == 53)
-		close_map(mlx);
+		close_map();
 	if (keycode == W || keycode == A || keycode == S || keycode == D)
 	{
 		move_u_d_l_r(mlx, keycode);
@@ -35,6 +39,7 @@ int	main(int ac, char **av)
 	two_d = parse_maps(ac, av, &mlx);
 	print_img(two_d, mlx);
 	mlx_hook(mlx.win_p, ON_KEYPRESS, (1LL << 0), move, &mlx);
+	mlx_hook(mlx.win_p, BOUTON_CLOSE, (1LL << 0), &close_map, &mlx);
 	mlx_loop(mlx.mlx_p);
 	return (0);
 }

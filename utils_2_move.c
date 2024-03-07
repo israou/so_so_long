@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 23:11:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/06 17:47:56 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 19:42:13 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ int	how_many(char **two_d)
 	return (c_found);
 }
 
-void	close_map(t_mlx *mlx)
+int	close_map(void)
 {
 	ft_putstr_fd(" \t\t\t OUTTT !\n", 2);
-	mlx_destroy_window(mlx->mlx_p, mlx->win_p);
 	exit(0);
+	return (0);
 }

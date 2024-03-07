@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:21:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/06 17:28:14 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 18:11:24 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	create_window(t_mlx *mlx_pointers)
 void	load_and_display_image(t_mlx *mlx_pointers, char *filename, void **p)
 {
 	*p = mlx_xpm_file_to_image(mlx_pointers->mlx_p, filename, \
-	&(mlx_pointers->w), &(mlx_pointers->h));
+	&(mlx_pointers->width), &(mlx_pointers->height));
 	if (!*p)
 		errors("Error loading XPM image\n", 2);
 }
@@ -43,8 +43,8 @@ void	put_image(t_mlx *mlx, int i, int j, void *img)
 
 void	the_mlx(t_mlx *mlx_pointers)
 {
-	mlx_pointers->w = 0;
-	mlx_pointers->h = 0;
+	mlx_pointers->width = 0;
+	mlx_pointers->height = 0;
 	init_mlx(mlx_pointers);
 	create_window(mlx_pointers);
 	load_and_display_image(mlx_pointers, "sky.xpm", \

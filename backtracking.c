@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 18:27:06 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/05 23:42:45 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/06 18:23:34 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	checking_valid_path(char **new_map)
 			&& new_map[i - 1][j] != 'I' && new_map[i + 1][j] != 'I' && \
 			new_map[i][j - 1] != 'I' && new_map[i][j + 1] != 'I'))
 			{
-				errors("Error\nC||E mahdahom hta i donc maandhomsh acces\n", 2);
+				errors("Error\ncant access characters \n", 2);
 			}
 			j++;
 		}
@@ -78,12 +78,8 @@ void	the_valid_path(char **two_d)
 	i = 0;
 	j = 0;
 	new_map = copy_map(two_d);
-	// print_map(new_map);
 	find_player(new_map, &i, &j);
-	// printf("before === fill\n");
 	recursive_fill(new_map, i, j);
-	// printf("after === fill\n");
-	// print_map(new_map);
 	checking_valid_path(new_map);
 	ft_free(new_map);
 }
@@ -101,15 +97,3 @@ char	**ft_free(char **two_d)
 	free(two_d);
 	return (NULL);
 }
-
-// void print_map(char **two_d)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	while (two_d[i])
-// 	{
-// 		printf("copy_map[%d] == %s\n", i , two_d[i]);
-// 		i++;
-// 	}
-// }
