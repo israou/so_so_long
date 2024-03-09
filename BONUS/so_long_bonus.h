@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 20:39:46 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/03/07 23:54:07 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/03/09 01:48:14 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ typedef struct s_mlx
 	int		moves;
 }			t_mlx;
 
+typedef struct s_animation
+{
+	void	*images[5];
+	int		current;
+}			t_animation;
 //---------------------parsing-----------------
 int		strcompare(const char *s1, const char *s2);
 void	ft_putstr_fd(char *str, int fd);

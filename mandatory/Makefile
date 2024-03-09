@@ -24,19 +24,20 @@ SRC =	utils_4_parsing.c \
 		utils_2_move.c \
 		putnbr.c \
 
-SRC_B = ../bonus/back_tracking_bonus.c \
-				../bonus/compare_put_bonus.c \
-				../bonus/directionss_bonus.c \
-				../bonus/gnl_bonus.c \
-				../bonus/initialize_bonus.c \
-				../bonus/my_window_bonus.c \
-				../bonus/parse_walls_bonus.c \
-				../bonus/parsing_bonus.c \
-				../bonus/put_image_to_map_bonus.c \
-				../bonus/read_maps_bonus.c \
-				../bonus/so_long_bonus.c \
-				../bonus/utils2move_bonus.c \
-				../bonus/utils4parsing_bonus.c \
+SRC_B = /BONUS/backtracking_bonus.c \
+		/BONUS/compare_put_bonus.c \
+		/BONUS/directionss_bonus.c \
+		/BONUS/gnl_bonus.c \
+		/BONUS/initialize_bonus.c \
+		/BONUS/my_window_bonus.c \
+		/BONUS/parse_walls_bonus.c \
+		/BONUS/parsing_bonus.c \
+		/BONUS/put_image_to_map_bonus.c \
+		/BONUS/read_maps_bonus.c \
+		/BONUS/so_long_bonus.c \
+		/BONUS/utils2move_bonus.c \
+		/BONUS/utils4parsing_bonus.c \
+
 OBJ = $(SRC:.c=.o)
 
 OBJB = $(SRC_B:.c=.o)
@@ -52,7 +53,7 @@ bonus: $(OBJB)
 $(NAME_B): $(OBJB)
 			$(CC) $(OBJB) -lmlx -framework OpenGL -framework AppKit  -o $(NAME_B)
 
-%.o : %.c so_long.h
+%.o : %.c so_long.h so_long_bonus.h
 		$(CC) $(CFLAGS)  -Imlx -c $< -o $@
 
 clean:
