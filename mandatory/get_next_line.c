@@ -58,7 +58,7 @@ char	*get_next_line(int fd)
 		else if (readd == -1)
 		{
 			free(stash);
-			stash = NULL;
+			stash = NULL;//stack
 			return (free(buf), NULL);
 		}
 		buf[readd] = '\0';
